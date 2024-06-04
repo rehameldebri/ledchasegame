@@ -74,7 +74,7 @@ case 3:
   case 4:  
             CircuitPlayground.clearPixels();
             chaseInterval = 100;  // Reset chase interval to initial speed
-            currentState = 1;  // Transition back to IDLE state
+            currentState = 1;  
             break;
     }
 }
