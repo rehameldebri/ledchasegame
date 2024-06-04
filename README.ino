@@ -12,7 +12,7 @@ When user presses the left button, the game starts. Led lights will take turns l
 int currentState = 1; 
 const int targetPosition = 5;  // target position
 int currentPosition = 0;
-unsigned long lastUpdateTime;  // Should be unsigned long for millis()
+long lastUpdateTime;  // for millis()
 int chaseInterval = 100;  // Initial LED chase speed in milliseconds
 const float speedUpFactor = 0.9;  // Decrease chase interval by 10% on each win
 const int minChaseInterval = 10;  // Minimum interval 
