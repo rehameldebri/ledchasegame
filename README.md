@@ -1,4 +1,4 @@
-# ledchasegame
+# LEDchasegame
 Final project demo
 
 ### overview of game
