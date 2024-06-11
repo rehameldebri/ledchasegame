@@ -7,8 +7,7 @@ I am an ECE major and I want to get an A in ENGR103
 I made an LED chase game.
 When user presses the left button, the game starts. Led lights will take turns lighting up from 0 to 9. The user should press the right button to stop the led in the right place (the led located above the 3.3v). if they press the right button and get it in the right place, the game will print “you win” and start again but this time going faster. It will do that a max of 21 times or until the user gets it wrong. If the user presses the right button when it is in the wrong place, the game will stop, make a noise, and print “you lose”. it will restart again if you press the left button
 #include <Adafruit_CircuitPlayground.h>
-#include <Wire.h>
-#include <SPI.h>
+
 int currentState = 1; 
 const int targetPosition = 5;  // target position
 int currentPosition = 0;
@@ -41,9 +40,7 @@ void loop() {
             }
            
    if (CircuitPlayground.rightButton()) {
-              const uint8_t spGO[]         
-                 PROGMEM = {0x06,0x08,0xDA,0x75,0xB5,0x8D,0x87,0x4B,0x4B,0xBA,0x5B,0xDD,0xE2,0xE4,0x49,0x4E,0xA6,0x73,0xBE,0x9B,0xEF,0x62,0x37,0xBB,0x9B,0x4B,0xDB,0x82,0x1A,0x5F,0xC1,0x7C,0x79,0xF7,0xA7,0xBF,0xFE,0x1F};
-     currentState = 3; 
+               currentState = 3; 
             }
             break;
 
@@ -55,7 +52,7 @@ case 3:
                 Serial.print("Score: ");
                 Serial.println(score);  
                 chaseInterval = (int)(chaseInterval * speedUpFactor);  // Increase speed
-                if (chaseInterval < minChaseInterval) {  // last interval after 21 trys
+                if (chaseInterval < minChaseInterval) {  // last interval after 21 trys (0.9^21)=10.9... min-int=10
                     chaseInterval = minChaseInterval;
                 }
                 delay(1000);  
