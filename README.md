@@ -9,14 +9,14 @@ When user presses the left button, the game starts. Led lights will take turns l
 
 ### Inputs
 
-right button
+right button,
 left button
 
 ### Outputs 
 
-Led 0 green
-Leds red
-noise
+Led 0 green,
+Leds red,
+noise,
 serial monitor
 
 
